@@ -1,0 +1,112 @@
+Recommendation to follow: 
+1. There is no default return types for methods in Java. In java it is compulsory that you write the return type
+2. There is default access specifier for all the  methods and classes as "default", by default it is not "public".
+3. Write methods with return statement wherever possible
+4. Do not write any business logic in public static void main 
+5. You can create objects in "any method", it is not only psvm where you create objects
+6. Do not write any business logic without any method. *&****
+7. method name should have the task connected with some Nouns
+   driveCar
+ 8.Do not create unnecessary local variables. There are termed as code smells. This blocks code optimization
+ 9.Class name should start with Capital
+ 9.method name starts with small letters and should follow camelCase
+ 10. constants should be all CAPITAL
+ 11. variables should be lowercase and nouns.
+ 12. Only one class from entire project contains psvm 
+ 13. Referece names should come from refernce of class name
+ 14. Always have default constructor and parameterized constructor(wheereve possible) class
+ 15. In parameterized consturctor, the arguments should match with the name of instant variables
+ 16. Every instant varible should be prefix by this keyword
+ 17. Do not access the data members directly with reference, outside the class. Use getter, setters. 
+ 
+ 
+ Identifiers : variable names 
+   should start with letter or underscore
+   no special characters apart from _,$
+   keywords cannot be used as identifier 
+   no white space 
+   
+   
+ 
+ Keywords : predefined words having some meaning to compilers
+ 
+ 
+Hands on: 
+if.else
+switch.case
+for loop
+while loop
+do while
+break
+continue
+
+
+Rules for Constructor: 
+1. Name of constructor should match exactly to the name of class 
+2. Constructor should not have any return type. Not even void.
+3. Do not call the consturctor explicitly. 
+ 
+
+For every class there is cosmic super class "Object" 
+class Dog.... extends Object
+class Employee... extends Object
+
+
+
+Rules for  method overriding
+1. Method signature must be same
+2. return type must be same or covariant.Or subclass or the orginal return type i.e. covariant
+3. cannot have restrictive access specifier
+4. No change in the arguments
+5. There cannot be broader exception 
+6. final methods cannot be overridden
+
+
+Abstract class notes : 
+1. Abstract class cannot be instantiated 
+2. abstract class can contain all the methods as abstract or none of the methods as abstract 
+3. abstrct can can contain constructor 
+4. can contain data members and member functions as well. 
+5. you need extend abstract class
+
+Interface
+1. Interface is by default abstract class 
+2. all the methods are by default abstract,public 
+3. cannot contain any data member
+4. can contain only static constants
+5. it cannot contain any constructor
+6. you need to implement interface 
+7. you can implement more than one interface 
+8. interface can extends another interface 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
