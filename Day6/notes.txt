@@ -1,0 +1,24 @@
+try, catch, finally, throw, throws
+
+What do you mean by handling exception? 
+  NOT rectifying exception 
+  Program should not terminate abruptly 
+  The other parts of the program, which are not connnected with exception should not get impacted
+  If exception occurs, it should gracefully handled with proper error messages
+  
+Types of Exceptions :
+  Checked Exceptions : are checked at compilation time. Developer is forced to write the code in the exception handling block. 
+  UncheckedException : checked at runtime. Writing the exception handling block is options. 
+  
+How to handle exception : 
+  1. Put the suspicious/doubtful code in the try block 
+  2. Followed by that add the catchblock to catch the specific expection, you  are expecting to generated from the code in the try. 
+ 
+ 
+ Cascading of Exceptions
+   single block of try can generate multiple exceptions
+   
+   
+ try-catch-finally
+ try-finally
+ finally executes irrespective of whether exception occurs or not
