@@ -1,0 +1,37 @@
+Multithreading: 
+-------------------
+   Runnable Interface
+   Thread class
+   
+Lifecycle of thread: 
+   1. Thread is instantiated. : new thread()
+   2. Putting the thread into readypool: start() ->stack for the thread is created 
+   3. thread starts executing: run()-> JVM invokes the run method. 
+   4. thread pauses/blocks itself, so as to make sure other threads gets a chance to execute. 
+      sleep(time), wait(), wait(time), I/O blocking, delay, yield
+   5. resume the thread : notify(), notify()
+   6. Teminating the thread. run method completed. 
+
+Priorities of threads: 
+0-Lowest
+11/10/9/7 : hightest
+
+Normal  : default , 5
+Min
+Max 
+
+Joining a thread: complete the other thread and then come back to the current thread 
+Yield: give the procesing to other thread, which is having equal or more priority than the currently executing thread. 
+if there is no such threads available, current thread continues. 
+
+** wait, notify, notifyAll are NOT Thread methods. These are Object methods 
+wait(), wait(time)
+notify : notifying the connected thread which is blocked
+notifyAll : notifying all the threads that the job is done and they can continue further 
+
+ Interview questions: 
+ 1. relation between start and run
+ 2. how to use runnable thread 
+ 3. can i invoke run method explicityly 
+ 4. What are the constructors of Thread class?
+ 
