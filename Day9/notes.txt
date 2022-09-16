@@ -1,0 +1,37 @@
+Character Hierarchy
+	FileWriter
+	FileReader
+
+
+
+
+Byte Hierarchy
+	FileOutputStream
+	FileInputStream 
+	
+Serialization: 
+	Storing the object state in the file. 
+	    Object must implement Serializable
+	       Serializable is marker interface which marks the object eligible for Serialization. Else NotSerializableException
+	    FileOutputStream 
+	    ObjectOutputStream
+
+Deserialization: 
+    Retriving the object state from file
+    	FileInputStream
+    	ObjectInputStream 
+    	
+Steps: Serialization
+1. Create a class that implemnets serializable
+2. Create object of that class
+3. Open any file in the write mode, using FileOutputStream 
+4. Pas the fileOuputStream to the OBjectOutputStream 
+5. Invoke the writeObject() method of objectoutputstream, and pass the object that you want to serialize. 
+
+
+1. Open the file where the objects are serialized in the read mode. 
+   using FileInputStream 
+2. Pass FileInputStream to OBjectInputStream 
+3. Invoke the readObject() method of objectinputstream, and cast the 
+   object type (e.g. employee) to the object returned. 
+	    
