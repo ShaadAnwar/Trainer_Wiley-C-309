@@ -1,0 +1,45 @@
+What is collection: Group of objects 
+
+Arrays: Group of objects 
+	Employee[] myemps=new Employee[10];
+
+Arrays vs collections: 
+	1. Arrays can be of objects as well as primitives vs objects
+	2. Array size is fixed vs Dynamic
+	3. Array do not have some predefined method. You need to manually process it vs rich library
+
+interface:
+Collection
+List
+Set 
+Map
+
+
+Classes
+ArrayList
+Vector
+LinkedList
+HashMap
+TreeMap
+HashSet
+TreeSet
+hashtable
+PriorityQueue
+Deque
+
+Important points to ponder: 
+
+1. List is the only collection, which contains the methods based on index numbers 
+2. To add the objects in the Set, your object must override equals and hashcode. If all the objects have the different hashcodes then equals method is not invoked. 
+3. If you want object in the Treest, your class must implement comparable interface and it should override the method compareTo
+5. Customized sorting can be done by implemnting Comparator interface, which contains compare method 
+
+
+What is difference between Dictionary and Map?
+how to deal with HashTable? : 
+What is difference between HashTable and HashMap?
+  HashTable is synchronized and HashMap is nonsynchronized. So it is more faster. 
+  HashTable does not allow null keys or values
+  HashMap allows one null key and any number of null values
+  
+
