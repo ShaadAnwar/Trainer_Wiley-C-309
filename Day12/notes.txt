@@ -1,0 +1,22 @@
+JDK 1.8 updates
+---------------------
+1. Updates in the interface
+	a. interfaces can contain the implemented methods. Termed as "Default methods"
+	b. interfaces can contain the static implemented methods
+2. Lambda Expression
+	Declarative way of java programming instead of decorative way 
+3. Functional Interface
+	Only one abstract method into it. Only one functionality to implement 
+		@FunctionalInterface annotation is applied to functional interface. 
+		Comparator
+		Runnable
+		java.util.function.*
+			Consumer
+			Predicate
+			BiCosumer
+			Function
+			IntFunction
+4. Stream
+		intermediate function :intermediate operations
+		
+		terminal function : provides the answers
