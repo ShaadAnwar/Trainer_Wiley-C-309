@@ -1,0 +1,38 @@
+/* 1st Question */
+SELECT Client.Name
+FROM Client JOIN Package   
+  ON Client.AccountNumber = Package.Recipient 
+WHERE Package.weight = 1.5;
+
+/* 2nd Question */
+SELECT SUM(p.weight) 
+FROM Client AS c 
+  JOIN Package as P 
+  ON c.AccountNumber = p.Sender
+WHERE c.Name = "Al Gore's Head";
+
+/* 3rd Question */
+SELECT Employee.Name
+FROM Employee
+  JOIN Shipment ON Shipment.Manager = Employee.EmployeeID
+  JOIN Package ON Package.Shipment = Shipment.ShipmentID
+WHERE Shipment.ShipmentID IN (
+  SELECT p.Shipment 
+  FROM Client AS c 
+    JOIN Package as P 
+    ON c.AccountNumber = p.Sender
+  WHERE c.AccountNumber = (
+    SELECT Client.AccountNumber
+    FROM Client JOIN Package 
+      ON Client.AccountNumber = Package.Recipient 
+    WHERE Package.weight = 1.5
+  )
+)
+GROUP BY (Employee.Name);
+
+/* 4th Question */
+select a.accountnumber,a.name,b.accountnumber,b.name from client a,client b,package c where a.accountnumber=c.sender and b.accountnumber=recipient and c.contents='Undeclared';
+
+/* 5th Question */
+select planet.coordinates, b.planet, b.contents from planet join (select shipment.planet, package.contents from shipment join package on shipment.shipmentID = package.shipment where package.weight = 10) b
+on planet.planetID = b.planet;

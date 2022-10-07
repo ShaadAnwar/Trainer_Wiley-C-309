@@ -1,0 +1,181 @@
+
+								TEAM 06 - ERROR 404
+
+________________________________________________________________________________________________________________
+1) Creating tables :
+________________________________________________________________________________________________________________
+
+/* Departments table creation */
+
+CREATE TABLE Departments (
+	DepartmentID int PRIMARY KEY AUTO_INCREMENT,
+	DepartmentName varchar(255)
+);
+	
+
+/* Employees table creation */
+
+CREATE TABLE Employees (
+	EmployeeID int PRIMARY KEY AUTO_INCREMENT,
+	FirstName varchar(255),
+	LastName varchar(255),
+	Gender varchar(2),	
+	HireDate DATE,
+	DateOfBirth DATE,
+	DepartmentID int,
+	FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+);
+
+
+/* Salary table creation */
+
+CREATE TABLE Salary (
+	EmployeeSalaryID int PRIMARY KEY AUTO_INCREMENT,
+	EmployeeSalary int,
+	FromDate DATE,
+	ToDate DATE,
+	EmployeeID int,
+	FOREIGN KEY(EmployeeID) REFERENCES Employees(EmployeeID)
+);
+
+
+
+________________________________________________________________________________________________________________
+2) Inserting data into tables :
+________________________________________________________________________________________________________________
+
+
+/* Insertion of data in Departments Table */
+
+insert into Departments(DepartmentID, DepartmentName) values (1, HR), (2, Technical), (3, Marketing), (4, HR), (5, Sales);
+	
+
+/* Insertion of data in Employees Table */
+
+Insert into Employees(EmployeeID, FirstName, LastName, Gender, HireDate, DateOfBirth, DepartmentID) values 
+(1, 'Simran', 'Redij', 'F', '2022-10-01', '2001-04-20', 2),
+(2, 'Vishal', 'Dikhit', 'M', '2020-10-03', '2000-10-18' , 2), 
+(3, 'Sunil', 'Poonia', 'M', '2018-12-05', '2000-11-22', 4),
+(4, 'Pallavi', 'Priya', 'F', '2020-05-07', '2002-05-14', 3),
+(5, 'Kavya', 'Swamy', 'F', '2015-10-09', '2006-09-19', 4);
+
+
+/* Insertion of data in Salary Table */
+
+Insert into Salary values 
+(1, 10000, '2022-10-01', '2022-10-31', 1),
+(2, 30000, '2020-10-03', '2021-10-31', 2),
+(3, 20000, '2018-12-05', '2019-10-31', 3),
+(4, 50000, '2020-05-07', '2021-10-31', 4),
+(5, 40000, '2015-10-09', '2016-10-31', 5),
+
+(6, 150000, '2022-10-31', '2023-10-31', 1),
+(7, 300000, '2021-10-31', '2022-10-31', 2),
+(8, 200000, '2019-10-31', '2020-10-31', 3),
+(9, 500000, '2021-10-31', '2022-10-31', 4),
+(10, 400000, '2016-10-31', '2017-10-31', 5);
+
+
+________________________________________________________________________________________________________________
+3) Problems :
+________________________________________________________________________________________________________________
+
+
+Q.1) Show employeeID, firstName, lastName, dateOfBirth of technical or marketing department employees with salary greater than 20,000.
+
+Q.2) Find the number of female employees that work in Technical Department.
+
+Q.3) Sort the list of employees according to their Date of Birth in descending order & print data from 3rd row onwards.
+
+Q.4) Display the list of employees whose id is even & first name ends with 'l' or 'i'. Also print the department names.
+
+Q.5) Find the sum of salaries of all male employees whose date of joining is between 2018-12-05 & 2021-10-31 & display it as a column named 'SumOfSalary'.
+
+
+
+________________________________________________________________________________________________________________
+4) Answers :
+________________________________________________________________________________________________________________
+
+Solution 1) 
+
+SELECT EmployeeID, FirstName, LastName, DateOfBirth from employees WHERE DepartmentID IN (select DepartmentID FROM departments WHERE DepartmentName IN ('Technical', 'Marketing')) AND employeeID IN((select employeeID FROM salary WHERE employeeSalary > 20000));
+
+Expected Output :
++------------+-----------+----------+-------------+
+| EmployeeID | FirstName | LastName | DateOfBirth |
++------------+-----------+----------+-------------+
+|          1 | Simran    | Redij    | 2001-04-20  |
+|          2 | Vishal    | Dikhit   | 2000-10-18  |
+|          4 | Pallavi   | Priya    | 2002-05-14  |
++------------+-----------+----------+-------------+
+3 rows in set (0.00 sec)
+
+
+
+Solution 2) 
+
+SELECT COUNT(employeeID) FROM employees WHERE gender = 'F' AND departmentID = (SELECT departmentID FROM departments WHERE departmentName = 'Technical'); 
+
+Expected Output :
++-------------------+
+| COUNT(employeeID) |
++-------------------+
+|                 1 |
++-------------------+
+1 row in set (0.00 sec)
+
+
+
+Solution 3)
+
+SELECT * FROM employees ORDER BY DateOfBirth DESC LIMIT 2,3;
+
+Expected Output :
++------------+-----------+----------+--------+------------+-------------+--------------+
+| EmployeeID | FirstName | LastName | Gender | HireDate   | DateOfBirth | DepartmentID |
++------------+-----------+----------+--------+------------+-------------+--------------+
+|          1 | Simran    | Redij    | F      | 2022-10-01 | 2001-04-20  |            2 |
+|          3 | Sunil     | Poonia   | M      | 2018-12-05 | 2000-11-22  |            4 |
+|          2 | Vishal    | Dikhit   | M      | 2020-10-03 | 2000-10-18  |            2 |
++------------+-----------+----------+--------+------------+-------------+--------------+
+3 rows in set (0.00 sec)
+
+
+
+Solution 4)
+
+SELECT e.EmployeeID, e.FirstName, e.LastName, e.Gender, e.HireDate, e.DateOfBirth, d.DepartmentName FROM employees AS e JOIN departments AS d ON e.departmentID = d.departmentID WHERE MOD(e.employeeID, 2) = 0 AND e.firstName LIKE '%l' OR e.firstName LIKE '%i';
+
+Expected Output :
++------------+-----------+----------+--------+------------+-------------+----------------+
+| EmployeeID | FirstName | LastName | Gender | HireDate   | DateOfBirth | DepartmentName |
++------------+-----------+----------+--------+------------+-------------+----------------+
+|          2 | Vishal    | Dikhit   | M      | 2020-10-03 | 2000-10-18  | Technical      |
+|          4 | Pallavi   | Priya    | F      | 2020-05-07 | 2002-05-14  | Marketing      |
++------------+-----------+----------+--------+------------+-------------+----------------+
+2 rows in set (0.00 sec)
+
+
+
+Solution 5)
+
+SELECT SUM(employeeSalary) AS SumOfSalary FROM salary WHERE employeeID IN ((SELECT employeeID FROM employees WHERE gender = 'M' AND hireDate BETWEEN '2018-12-05' AND '2021-10-31'));
+
+Expected Output :
++-------------+
+| SumOfSalary |
++-------------+
+|      550000 |
++-------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
