@@ -1,0 +1,18 @@
+JDBC: 
+   Java DataBase Connectivity 
+   Drivers: 
+   		Type1: ODBC Drivers  , OS Dependant 
+   		Type2: Native Driver (Vendor/organization)
+   		Type3: Network drivers 
+   		Type4: Completely Vendor Driver (Provided by DB)
+JDBC API
+	Driver : getConnection
+	Connection: createStatement
+	Statement: executeQuery, execute, executeUpdate
+		Statement
+		PreparedStatement
+		CallableStatment
+	ResultSet
+	ResultSetMetadata
+	DatabaseMetadata
+	
