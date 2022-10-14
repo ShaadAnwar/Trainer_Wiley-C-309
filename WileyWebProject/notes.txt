@@ -1,0 +1,38 @@
+Web architectures : 
+
+M: Model
+V: View
+C: Controller
+
+1. MVC1 architecture : Responsiblity of single file to do everything 
+	
+	
+2. MVC2 architecture 
+	M : Java / POJO / Beans
+	V : JSP
+	C : Servlet
+	
+JSP 
+	JSP Elements
+		Scriptlet	: <%  %>   : Pure Java code
+		Expression	: <%= %>   : Print the return value from that expression
+		Declaration : <%! %>   : declaration of instant variables in servlet
+	Implicit Objects : 
+		out : Printwriter
+		request
+		response
+		session
+
+
+
+
+<!-- declares the variable in the jspService() method -->
+	<%
+	int i = 1;
+	Connection con=null;
+	Utility u=new Utility();
+	%>
+	<br> The addition is :<%=i %>
+	
+	<!--  declared variables as instance variables  -->
+	<%! Connection con=null; %>	
