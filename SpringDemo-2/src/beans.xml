@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+    
+    <bean id="book1" class="com.beans.Book">
+    	<constructor-arg value="Java490" />
+		<constructor-arg value="Core Java" />
+		<constructor-arg value="300" />
+    </bean>
+    
+    <bean id="book2" class="com.beans.Book">
+    	<constructor-arg value="Spring76" />
+		<constructor-arg value="Spring 5.0" />
+		<constructor-arg value="744" />
+    </bean>
+    
+    <bean id="booklist" class="com.beans.LibraryList">
+    	<property name="books">
+    		<list>
+				<ref bean="book1"/>
+				<ref bean="book2"/>    		
+    		</list>
+    	</property>
+    
+    </bean>
+</beans>
