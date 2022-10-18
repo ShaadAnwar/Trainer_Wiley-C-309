@@ -16,6 +16,12 @@
 		<constructor-arg value="744" />
     </bean>
     
+     <bean id="book3" class="com.beans.Book">
+    	<constructor-arg value="Spring76" />
+		<constructor-arg value="Spring 5.0" />
+		<constructor-arg value="890" />
+    </bean>
+    
     <bean id="booklist" class="com.beans.LibraryList">
     	<property name="books">
     		<list>
@@ -25,4 +31,59 @@
     	</property>
     
     </bean>
+    
+    <bean id="bookset" class="com.beans.LibrarySet">
+    	<property name="books">
+    		<set>
+    			<ref bean="book1"/>
+				<ref bean="book2"/> 
+				<ref bean="book3"/> 
+    		</set>
+    	
+    	</property>
+    </bean>
+    
+    
+    <bean id="bookmap" class="com.beans.LibraryMap">
+    	<property name="books">
+    		<map>
+    			<entry key="Java" value-ref="book1"/>
+    			<entry key="Spring" value-ref="book2"/>
+    			<entry key="Spring-1" value-ref="book3"/>
+    			
+    		</map>
+    	
+    	</property>
+    
+    
+    </bean>
+    
+    
+    
+    <bean id="bookmap" class="com.beans.LibraryMap1">
+    	<property name="books">
+    		<map>
+    			<entry key="Java">
+    				<list>
+    					<ref bean="book1"/>
+    					<ref bean="book2"/>
+    					<ref bean="book3"/>
+    					<ref bean="book4"/>
+    					<ref bean="book5"/>
+    				</list>
+    			</entry>
+    			
+    		</map>
+    	
+    	</property>
+    
+    </bean>
+    
+    
+    
+    
+    
+    
+    
+    
 </beans>

@@ -11,8 +11,11 @@ public class BookDemo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ApplicationContext applicationContext=new ClassPathXmlApplicationContext("beans.xml");
-		LibraryList mybooklist=(LibraryList)applicationContext.getBean("booklist");
-		mybooklist.displayBooks();
+//		LibraryList mybooklist=(LibraryList)applicationContext.getBean("booklist");
+//		mybooklist.displayBooks();
+		
+		LibrarySet mybookSet=(LibrarySet)applicationContext.getBean("bookset");
+		mybookSet.displayBooks();
 	}
 
 }

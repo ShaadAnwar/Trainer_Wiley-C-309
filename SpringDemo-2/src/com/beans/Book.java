@@ -45,6 +45,26 @@ public class Book {
 		this.bookName = bookName;
 		this.price = price;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		Book b=(Book)obj;
+		return this.isbn.equals(b.isbn);
+	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return this.bookName.length()/2;
+	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
