@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+   
+   
+    <bean id="departmentBean" class="com.autowiring.beans.DepartmentBean" primary="true">
+        <property name="name" value="Technology" />
+    </bean>
+    
+   
+    <bean id="departmentBean1" class="com.autowiring.beans.DepartmentBean" >
+        <property name="name" value="Sales" />
+    </bean>  
+   <!--    
+   <bean id="employee" class="com.autowiring.beans.EmployeeBean" autowire="byType">
+        <property name="fullName" value="Mandar Jog"/>
+    </bean>
+   
+    -->
+    
+     
+    <bean id="employee" class="com.autowiring.beans.EmployeeBean" autowire="byName">
+        <property name="fullName" value="Mandar Jog"/>
+    </bean>
+    
+	<!-- 
+	<bean id="employee" class="com.autowire.beans.EmployeeBean"
+		autowire="constructor">
+		<property name="fullName" value="Mandar Jog" />
+	</bean>
+	 -->
+</beans>
