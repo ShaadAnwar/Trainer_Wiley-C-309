@@ -28,5 +28,10 @@
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
   	
+  	<bean id="namedTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+		<constructor-arg ref="dataSource"/>
+	</bean>
+  	
   	
 </beans>

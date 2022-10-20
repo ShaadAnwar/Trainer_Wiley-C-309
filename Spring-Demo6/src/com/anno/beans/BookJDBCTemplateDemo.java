@@ -9,7 +9,10 @@ public class BookJDBCTemplateDemo {
 		// TODO Auto-generated method stub
 
 		ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
-		CustomerDAO customerDAO=(CustomerDAO)context.getBean("customerDAOImpl");
+		//CustomerDAO customerDAO=(CustomerDAO)context.getBean("customerDAOImpl");
+		
+		//CustomerDAO customerDAO=(CustomerDAO)context.getBean("customerDAOJDBCSupportImpl");
+		CustomerDAO customerDAO=(CustomerDAO)context.getBean("customerDAOJDBCNamedParameterImpl");
 		
 		int rows=customerDAO.addCustomer(new Customer(102,"John Doe"));
 		if(rows>0)
