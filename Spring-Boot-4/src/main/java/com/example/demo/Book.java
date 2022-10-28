@@ -8,7 +8,7 @@ import javax.persistence.NamedNativeQuery;
 
 
 
-//@NamedNativeQuery(name="Book.findQuery", query = "", resultClass = Book.class)
+@NamedNativeQuery(name="Book.findQuery", query = "", resultClass = Book.class)
 @Entity
 public class Book {
 	@Id
