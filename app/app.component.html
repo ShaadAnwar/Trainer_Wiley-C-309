@@ -1,0 +1,16 @@
+<div class="main">
+  <div class="toolbar">
+    <span><h1>Welcome to, <font [color]="mycolor">{{ projectTitle}}</font></h1></span>
+  </div>
+  <button (click)="showData()"  [disabled]="status">click</button>
+  <div [class]="classBlue">{{message}}</div> <!-- property binding for class-->
+  <div [class.messageclass1]="checkNumber">{{message}}</div> <!-- conditional class applied-->
+  
+  <div [class.messageclass1]="checkIt()">{{message}}</div>
+  <div [class]="checkNumber?'messageclass1':'messageclass2'">{{message}}</div> <!-- conditional class applied-->
+  <div [style.color]="colorBlue">This is styled !!</div>
+
+  <input  [(ngModel)]="bookName"  type="text">{{bookName}}
+  <!--add FormsModule in import and imports array of app module ts file-->
+
+</div>

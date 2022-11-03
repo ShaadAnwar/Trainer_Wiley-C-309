@@ -1,0 +1,20 @@
+.toolbar{
+    top:0;
+    left:0;
+    right:0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+}
+.toolbar span{
+    margin-left: 10px;
+}
+.messageclass1{
+    color:blue
+}
+.messageclass2{
+    color:red
+}
