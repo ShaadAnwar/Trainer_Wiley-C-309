@@ -1,3 +1,11 @@
-This is my home page!!
-<app-book-details [bookData]="bookName" (eventEmitter)="message=$event" ></app-book-details>
-{{message}}
+<div appYellowBackGround>This is highlighted</div>
+<div>{{title | uppercase}}</div>
+<div>{{title | slice:2:4}}</div>
+<div>{{price | currency}}</div>
+<div>{{price | currency : 'INR'}}</div>
+<div>{{pdate | date | uppercase}}</div>
+
+<div>{{value | convertlog}}</div>
+
+<div>{{name1}}</div>
+<!--<app-book-details></app-book-details>-->

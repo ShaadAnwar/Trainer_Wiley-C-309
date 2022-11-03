@@ -1,2 +1,26 @@
-<p>book-details works for: </p>{{bookData}}
-<button (click)="myevent()">click</button>
+<p>List of Books</p>
+<div *ngFor="let book of Books">
+    <h3>{{book.BookName}},{{book.BookAuthor}}</h3>
+</div>
+
+<div *ngFor="let book of Books;let i=index">
+    <h3>{{i+1}} . {{book.BookName}},{{book.BookAuthor}}</h3>
+</div>
+
+
+
+<div *ngIf="bookStatus;else elseBlock">
+    <div>
+        Select Book:
+        <select>
+            <option *ngFor="let book of Books">
+                {{book.BookName}}
+            </option>
+        </select>
+    </div>
+
+</div>
+<ng-template #elseBlock>
+    There are no books available in the cart 
+</ng-template>
+

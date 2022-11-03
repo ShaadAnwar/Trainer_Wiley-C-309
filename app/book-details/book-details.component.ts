@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-book-details',
@@ -6,18 +6,18 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit {
-  @Input()
-  bookData="";
-
-  @Output()
-  eventEmitter=new EventEmitter
+  bookStatus:boolean=false;
+  
+    Books=[
+    {"BookName":"Learn Java", "BookAuthor":"Peter Gustav"},
+    {"BookName":"Angular Professional", "BookAuthor":"Patric Simon"},
+    {"BookName":"Spring Microservices", "BookAuthor":"Wilson Jerome"}
+  ];
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  
 
-  myevent(){
-    this.eventEmitter.emit("Book Data pulled succussfully!!")
+  ngOnInit(): void {
   }
 
 }
